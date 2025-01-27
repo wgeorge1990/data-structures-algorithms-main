@@ -8,15 +8,15 @@ public class Array {
         items = new int[length];
     }
 
-    public void print(){
-        for (int i = 0; i < count; i++){
+    public void print() {
+        for (int i = 0; i < count; i++) {
             System.out.println(items[i]);
         }
     }
 
-    public void insert(int item){
+    public void insert(int item) {
         // if array is full we need to resize
-        if (items.length == count){
+        if (items.length == count) {
 
             // create new array ( twice the size )
             int[] newItems = new int[count * 2];
@@ -34,7 +34,7 @@ public class Array {
         count++;
     }
 
-    public void removeAt(int index){
+    public void removeAt(int index) {
         // validate index
         if (index < 0 || index >= count)
             throw new IllegalArgumentException("Index out of bounds");
@@ -44,21 +44,20 @@ public class Array {
         // index: 1
         // 1 <- 2
         // 2 <- 3
-        for (int i = index; i < count; i++){
+        for (int i = index; i < count; i++) {
             items[i] = items[i + 1];
         }
         count--;
     }
 
-    public int indexOf(int item){
+    public int indexOf(int item) {
         // runtime complexity O(n)
-        for (int i = 0; i < count; i++){
+        for (int i = 0; i < count; i++) {
             // if item found, return index
             if (items[i] == item)
                 return i;
         }
         return -1;
-    };
-
+    }
 
 }
