@@ -8,6 +8,33 @@ public class Array {
         items = new int[length];
     }
 
+    public boolean contains(int item) {
+        return indexOf(item) != -1;
+    }
+
+    //runtime complexity -> 0(n * m)
+    public Array intersect(Array other) {
+        Array result = new Array(count);
+        for (int i = 0; i < count; i++) {
+            if (other.contains(items[i]))
+                result.insert(items[i]);
+        }
+        return result;
+    }
+
+    // runtime complexity -> 0(n)
+    public int max(){
+        if(count == 0)
+            throw new IllegalStateException("Array is empty");
+
+        int max = items[0];
+        for (int i = 1; i < count; i++){
+            if(items[i] > max)
+                max = items[i];
+        }
+        return max;
+    }
+
     public void print() {
         for (int i = 0; i < count; i++) {
             System.out.println(items[i]);
