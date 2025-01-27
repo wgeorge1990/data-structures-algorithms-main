@@ -8,6 +8,37 @@ public class Array {
         items = new int[length];
     }
 
+    // helper method for Array.insertAt
+    private void resize() {
+        int[] newItems = new int[items.length * 2];
+        for (int i = 0; i < count; i++)
+            newItems[i] = items[i];
+        items = newItems;
+    }
+
+    public void insertAt(int item, int index){
+        if (index < 0 || index >= count)
+            throw new IndexOutOfBoundsException("index out of bounds");
+
+        if (items.length == count)
+            resize();
+
+        for (int i = count; i > index; i--)
+            items[i] = items[i - 1];
+
+        items[index] = item;
+        count++;
+    }
+
+    // time complexity -> 0(n)
+    public void reverse() {
+        for (int i = 0; i < count / 2; i++){
+            int temp = items[i];
+            items[i] = items[count - i - 1];
+            items[count - i - 1] = temp;
+        }
+    }
+
     public boolean contains(int item) {
         return indexOf(item) != -1;
     }

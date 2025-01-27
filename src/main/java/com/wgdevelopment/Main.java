@@ -21,15 +21,8 @@ public class Main {
         numbers.insert(1);
         numbers.insert(2);
         numbers.insert(3);
-        numbers.insert(40);
-        numbers.insert(5);
-
-        Array numbers2 = new Array(3);
-        numbers2.insert(1);
-        numbers2.insert(2);
-        numbers2.insert(3);
-
-        numbers.intersect(numbers2).print();
+        numbers.insertAt(50, 2);
+        numbers.print();
 
     }
 }
