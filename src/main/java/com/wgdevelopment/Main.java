@@ -16,6 +16,8 @@ public class Main {
         System.out.println(numbers.indexOf(100)); // 0(n)
         System.out.println(numbers.indexOf(20));
 
+        numbers.print();
+
         // throws exception because it is out of bounds
         numbers.removeAt(5);
 
