@@ -12,5 +12,7 @@ public class Main {
         System.out.println(list.indexOf(10));
         System.out.println(list.indexOf(5));
         System.out.println(list.indexOf(200));
+        System.out.println(list.contains(300));
+        System.out.println(list.contains(30));
     }
 }
