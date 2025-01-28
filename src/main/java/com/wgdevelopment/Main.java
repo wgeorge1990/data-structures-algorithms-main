@@ -8,6 +8,6 @@ public class Main {
       list.addLast(30);
       list.addFirst(5);
 
-      list.removeFirst();
+      list.removeLast();
     }
 }

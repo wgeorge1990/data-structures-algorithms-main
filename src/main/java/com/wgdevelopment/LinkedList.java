@@ -78,8 +78,29 @@ public class LinkedList {
         first = second;
     }
 
+    public void removeLast() {
+      if (isEmpty())
+          throw new NoSuchElementException();
 
-    // deleteFirst
-    // deleteLast
+      if (first == last) {
+          first = last = null;
+          return;
+      }
+
+      var previous = getPrevious(last);
+      last = previous;
+      last.next = null;
+    }
+
+    private Node getPrevious(Node node) {
+        var current = first;
+        while (current != null) {
+            if (current.next == last) {
+                return current;
+            }
+            current = current.next;
+        }
+        return null;
+    }
 
 }
