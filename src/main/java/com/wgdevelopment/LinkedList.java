@@ -1,5 +1,7 @@
 package com.wgdevelopment;
 
+import java.util.NoSuchElementException;
+
 public class LinkedList {
     private class Node {
         private int value;
@@ -58,6 +60,24 @@ public class LinkedList {
     public boolean contains(int item) {
         return indexOf(item) != -1;
     }
+
+    public void removeFirst() {
+        // [10 -> 20 -> 30]
+        // first -> 20
+        // remove link to 10
+        if (isEmpty())
+            throw new NoSuchElementException();
+
+        if (first == last) {
+            first = last = null;
+            return;
+        }
+
+        var second = first.next;
+        first.next = null;
+        first = second;
+    }
+
 
     // deleteFirst
     // deleteLast
