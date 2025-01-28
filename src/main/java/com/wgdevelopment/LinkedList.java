@@ -42,8 +42,20 @@ public class LinkedList {
         return first == null;
     }
 
+    public int indexOf(int item) {
+        //traverse list until we find node with value == item
+        int index = 0;
+        var current = first;
+        while (current != null) {
+            if (current.value == item) return index;
+            current = current.next;
+            index++;
+        }
+        return -1;
+    }
+
     // deleteFirst
     // deleteLast
     // contains
-    // indexOf
+
 }
